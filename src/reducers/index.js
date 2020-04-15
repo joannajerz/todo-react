@@ -1,6 +1,6 @@
-import {combaineReducers} from 'redux';
+import {combineReducers} from 'redux';
 import todos from './todo.reducer';
 
-export default combaineReducers({
+export default combineReducers({
     todos
-})
+});

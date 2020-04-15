@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect} from "react-redux"
 
-const todoList = (todos) =>{
+const Todolist = ({todos}) =>{
     return(
         <div>
             {JSON.stringify(todos)}
@@ -11,4 +11,4 @@ const todoList = (todos) =>{
 const mapStateToProps=state=>({
     todos:state.todos
 })
-export default connect(mapStateToProps)(todoList);
+export default connect(mapStateToProps)(Todolist);
