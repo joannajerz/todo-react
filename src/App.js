@@ -6,8 +6,8 @@ import Addtodo from "./container/addtodo";
 function App() {
   return (
    <div>
-     <Todolist/>
      <Addtodo/>
+     <Todolist/>
    </div>
   );
 }

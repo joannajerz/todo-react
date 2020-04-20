@@ -9,9 +9,17 @@ const todos = (state =[], action) => {
                 text: action.text
             }
         ]
+        case 'TOGGLE_TODO':
+            return state.map(todo=>{
+                const isToggleToDo = todo.id === action.id;
+                return {
+                    ...todo,
+                    complete: isToggleToDo? !todo.complete: todo.complete
+                }
+            })
         default:
         return state;
-    }
+    } 
 }
 
 export default todos;

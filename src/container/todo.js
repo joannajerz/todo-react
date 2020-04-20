@@ -1,14 +1,22 @@
 import React from 'react';
 import { connect} from "react-redux"
+import Todo from'../components/todo';
+import {toggleTodo} from '../action/todo.actions';
 
-const Todolist = ({todos}) =>{
+const Todolist = ({todos, toggleTodo}) =>{
     return(
-        <div>
-            {JSON.stringify(todos)}
-        </div>
+        <ul>
+            {todos.map(todo => (
+                <Todo key={todo.id} {...todo} onClick={()=> toggleTodo(todo.id)}/>
+            ))}
+        </ul>
     )
 };
 const mapStateToProps=state=>({
     todos:state.todos
 })
-export default connect(mapStateToProps)(Todolist);
+
+const mapDispatchToProps = 
+{toggleTodo};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Todolist);
